@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import SignUpForm, LoginForm, UserpageForm, PasswordForm
+from .forms import SignUpForm, LoginForm, PasswordForm
 from .models import User
 import logging
 from django.db import connection
@@ -27,8 +27,8 @@ def register(request):
         else:
             signup_form = FormWrapper(signup_form, True)
             login_form = FormWrapper(LoginForm())
-            return render(request, 'motor/registration/register.html', {'signup_form': signup_form, 'login_form': login_form})
-    return render(request, 'motor/registration/register.html')
+            return render(request, 'register.html', {'signup_form': signup_form, 'login_form': login_form})
+    return render(request, 'register.html')
 
 
 def login(request):
@@ -41,4 +41,4 @@ def login(request):
             if user is not None:
                 request.session['user_id'] = user.id
                 return redirect('user_page')
-    return render(request, 'motor/registration/login.html')
+    return render(request, 'login.html')

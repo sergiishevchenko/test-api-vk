@@ -9,13 +9,13 @@ class SignUpForm(forms.Form):
 
     def clean_email(self):
         passed_email = self.cleaned_data.get('email', None)
-        if User.objects.filter(Email=passed_email).count() > 0:
+        if User.objects.filter(email=passed_email).count() > 0:
             raise forms.ValidationError(u'Данный email уже используется.')
         return passed_email
 
     def clean_username(self):
         passed_username = self.cleaned_data.get('username', None)
-        if User.objects.filter(Login=passed_username).count() > 0:
+        if User.objects.filter(login=passed_username).count() > 0:
             raise forms.ValidationError(u'Данный логин занят.')
         return passed_username
 
