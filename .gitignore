@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+auth_vk.ini
+
 # C extensions
 *.so
 
