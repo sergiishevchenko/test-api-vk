@@ -9,10 +9,6 @@ class User(models.Model):
     def __str__(self):
         return f'Пользователь {self.Login}'
 
-    GENDER_LIST = [
-        ('М', 'Мужской'),
-        ('Ж', 'Женский')
-    ]
-    email = models.CharField(max_length=30, verbose_name='Логин пользователя')
+    email = models.CharField(max_length=30, verbose_name='Email пользователя')
     username = models.CharField(max_length=30, verbose_name='Имя пользователя')
-    password = models.CharField(max_length=30, verbose_name='Фамилия пользователя')
+    password = models.CharField(max_length=30, verbose_name='Пароль пользователя')

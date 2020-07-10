@@ -23,9 +23,3 @@ class SignUpForm(forms.Form):
 class LoginForm(forms.Form):
     email = forms.EmailField(max_length=256, help_text='Это поле обязательно')
     password = forms.CharField(label='Enter password', widget=forms.PasswordInput)
-
-
-class PasswordForm(forms.Form):
-    password = forms.CharField(label='Password', widget=forms.PasswordInput)
-    new_password = forms.CharField(label='New Password', widget=forms.PasswordInput)
-    new_password2 = forms.CharField(label='New Password2', widget=forms.PasswordInput)
